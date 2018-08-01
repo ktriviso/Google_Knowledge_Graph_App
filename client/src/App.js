@@ -40,11 +40,10 @@ export default class App extends Component {
         this.setState({
           response: data
         })
-        console.log(data)
         this.passContent(data)
       } else {
         // consistent formatting for when appending to the dom
-        const err = {itemListElement: ['try your search again, we did not find anything']}
+        const err = 'try your search again, we did not find anything'
         this.passContent(err)
       }
     })
