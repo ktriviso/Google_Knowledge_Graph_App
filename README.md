@@ -3,15 +3,15 @@
 
 ## Project Description
 
-The following application was built for the sole purpose of meeting the requirements for Paddle8's technical review.
+The following application was built for the sole purpose of meeting the requirements for a technical review.
 
 ![GitHub Version](https://github.com/ktriviso/paddle8)
 
-![BitBucket Version](https://spotify-internship.herokuapp.com/)
+![BitBucket Version](https://bitbucket.org/ktriviso/paddle8/src/master/)
 
 ## Developer Instructions
 
-- Download Github repository ![Here](https://github.com/ktriviso/calendar).
+- Download Github repository ![Here](https://bitbucket.org/ktriviso/paddle8/src/master/).
 - run `npm i` from root
 - In case of errors, `npm i` in client folder
 - In root, npm start
