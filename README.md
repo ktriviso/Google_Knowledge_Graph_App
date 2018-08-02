@@ -5,8 +5,6 @@
 
 The following application was built for the sole purpose of meeting the requirements for a technical review.
 
-![GitHub Version](https://github.com/ktriviso/paddle8)
-
 ![BitBucket Version](https://bitbucket.org/ktriviso/paddle8/src/master/)
 
 ## Developer Instructions
