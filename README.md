@@ -5,11 +5,9 @@
 
 The following application was built for the sole purpose of meeting the requirements for a technical review.
 
-![BitBucket Version](https://bitbucket.org/ktriviso/paddle8/src/master/)
-
 ## Developer Instructions
 
-- Download Github repository ![Here](https://bitbucket.org/ktriviso/paddle8/src/master/).
+- Download Github repository ![Here](https://github.com/ktriviso/Google_Knowledge_Graph_App).
 - run `npm i` from root
 - In case of errors, `npm i` in client folder
 - In root, npm start
