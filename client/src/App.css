@@ -88,8 +88,14 @@ input#search-1 {
   font-size: 2vmin;
 }
 
+/* Shepard Fairey - Power & Glory Day of the Dead Skull */
+#gif {
+  color: rgb(249,245,238);
+  font-size: 1vmin;
+}
 
 #film {
+  /* Shepard Fairey - Power & Glory Day of the Dead Skull */
   background-image: url('https://assets.paddle8.com/510/3950/assets/3950-1533138022-Retina_HereNowJuly2.gif');
   position: relative;
   height: 20vmin;

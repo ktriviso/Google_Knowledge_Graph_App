@@ -103,6 +103,7 @@ export default class App extends Component {
                 <p>Google Knowledge Seach App</p>
               </div>
             </div>
+            <p id="gif">Shepard Fairey - Power & Glory Day of the Dead Skull</p>
             </div>
           </div>
 
