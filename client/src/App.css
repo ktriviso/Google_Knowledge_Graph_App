@@ -1,32 +1,125 @@
+html {
+  background-color: rgb(230,230,230);
+
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  padding: 3rem;
+  padding-top: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: rgb(230,230,230);
 }
 
 li {
   margin: 1rem;
+}
+
+input#search-1 {
+  background: white;
+  border: 2px solid rgba(0,0,0,.1);
+}
+
+
+#button-search {
+  font-size: 2vmin;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.bx--btn--primary {
+  background-color: rgb(26, 74, 137);
+}
+
+@media only screen and (max-width: 901px) {
+  .bx--btn--primary {
+    margin-top: 1rem;
+  }
+}
+
+.bx--btn--primary:hover {
+  background-color: rgb(249,245,238);
+  color: black;
+}
+
+.bx--btn--primary:active {
+  background-color: rgba(0,0,0,.3);
+}
+
+.bx--grid {
+  padding: 2rem;
+}
+
+.content {
+  border: 1px solid black;
+  height: max-content;
+  padding: 2rem;
+  font-size: 2.5vmin;
+  background-color: white;
+}
+
+.content:hover {
+  border: 4px solid white;
+  background-color: rgb(249,245,238);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+.bx--footer {
+  border: 1px solid rgba(0,0,0,.3);
+}
+
+.bx--footer p {
+  text-align: center;
+  width: 100%;
+  color: rgba(0,0,0,.5);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2vmin;
+}
+
+
+#film {
+  background-image: url('https://assets.paddle8.com/510/3950/assets/3950-1533138022-Retina_HereNowJuly2.gif');
+  position: relative;
+  height: 20vmin;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title {
+  position: absolute;
+  width: 100%;
+  height: 20vmin;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255,255,255,.9);
+  z-index: 1000;
+}
+
+#title p {
+  font-size: 4vmin;
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(26, 74, 137);
+  margin-top: 5vmin;
+}
+
+.default {
+  color: rgb(26, 74, 137);
+}
+
+.loader {
+  margin: auto;
 }

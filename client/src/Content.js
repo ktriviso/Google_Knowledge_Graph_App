@@ -30,10 +30,12 @@ export default class Content extends Component {
 
   render() {
       return (
-        <div>
-          <ul>
-            {this.state.content.map((data, i) => (<li key={i}>{data.result.detailedDescription.articleBody}</li>))}
-          </ul>
+        <div className="wrapper">
+          {this.state.content[0].result.detailedDescription.articleBody === 'please enter a search' ? <div className="default">{this.state.content[0].result.detailedDescription.articleBody}</div> : null}
+
+          {this.state.content[0].result.detailedDescription.articleBody === 'try your search again, we did not find anything' ? <div className="default">{this.state.content[0].result.detailedDescription.articleBody}</div> : null}
+
+          {this.state.content.length > 1 ? this.state.content.map((data, i) => (<div className="content" key={i}>{data.result.detailedDescription.articleBody}</div>)) : null}
         </div>
       )
   }

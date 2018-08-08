@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Search } from 'carbon-components-react';
+import { Search, Button, Footer, Loading } from 'carbon-components-react';
 import Content from './Content';
 import './App.css';
 
@@ -8,23 +8,32 @@ export default class App extends Component {
     super(props)
     this.state = {
       appCache: {},
-      data: {}
+      data: {},
+      loading: false
     };
   }
 
   handleKeyPress = (event) => {
     if(event.key === 'Enter'){
       let search = event.target.value
-      // return cached data
-      if(Object.keys(this.state.appCache).includes(search)){
-        this.cache(event.target.value, this.state.response)
+      // error handling for an empty input
+      if(search === ''){
+
       } else {
-        this.fetchCall(search)
+        // return cached data
+        if(Object.keys(this.state.appCache).includes(search)){
+          this.cache(event.target.value, this.state.response)
+        } else {
+          this.fetchCall(search)
+        }
       }
     }
   }
 
   fetchCall = (search) => {
+    this.setState({
+      loading: !this.state.loading
+    })
     fetch('search', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -38,10 +47,15 @@ export default class App extends Component {
       this.cache(search, data)
       if(data.itemListElement){
         this.setState({
-          response: data
+          response: data,
+          loading: !this.state.loading
         })
         this.passContent(data)
       } else {
+        this.setState({
+          response: data,
+          loading: false
+        })
         const err = 'try your search again, we did not find anything'
         this.passContent(err)
       }
@@ -52,6 +66,21 @@ export default class App extends Component {
     this.setState({
       data: data
     })
+  }
+
+  clickedBUtton = () => {
+    let search = document.querySelector('input').value
+    // error handling for an empty input
+    if(search === ''){
+
+    } else {
+      // return cached data
+      if(Object.keys(this.state.appCache).includes(search)){
+        this.cache(search, this.state.response)
+      } else {
+        this.fetchCall(search)
+      }
+    }
   }
 
   cache = (search, response) => {
@@ -65,15 +94,58 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Search
-          className="some-class"
-          id="search-1"
-          labelText="Search"
-          placeHolderText="Search"
-          onKeyPress={this.handleKeyPress}
-        />
+        <div className="bx--grid">
 
-        <Content data={this.state.data}/>
+          <div className="bx--row">
+            <div className="bx--col-xs-12">
+            <div id="film">
+              <div id="title">
+                <p>Google Knowledge Seach App</p>
+              </div>
+            </div>
+            </div>
+          </div>
+
+          <div className="bx--row">
+            <div className="bx--col-sm-10">
+              <Search
+                className="some-class"
+                id="search-1"
+                labelText="Search"
+                placeHolderText="Search"
+                onKeyPress={this.handleKeyPress}
+              />
+            </div>
+            <div className="bx--col-sm-2">
+              <Button
+                onClick={this.clickedBUtton}
+                className="some-class"
+                href="#"
+              >
+                <p id="button-search">Search</p>
+              </Button>
+            </div>
+          </div>
+
+          <div className="bx--row">
+            <div className="bx--col-xs-12">
+              <Loading className="loader" small withOverlay={false} active={this.state.loading}/>
+            </div>
+          </div>
+
+          <div className="bx--row">
+            <Content data={this.state.data}/>
+          </div>
+
+          <div className="bx--row">
+            <div className="bx--col-xs-12">
+              <Footer>
+                <p>Made By Krista Triviso</p>
+              </Footer>
+            </div>
+          </div>
+
+        </div>
       </div>
     );
   }
